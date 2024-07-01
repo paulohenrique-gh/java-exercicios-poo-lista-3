@@ -12,11 +12,7 @@ public class Main {
 
         boolean flag = true;
         while (flag) {
-            System.out.println("Escolha uma opção: ");
-            System.out.println("1 - Exibir lista de filmes");
-            System.out.println("2 - Cadastrar novo filme");
-            System.out.println("3 - Sair");
-
+            imprimirMenu();
             String opcao = scanner.nextLine();
 
             switch(opcao) {
@@ -28,8 +24,17 @@ public class Main {
                     break;
                 case "3":
                     flag = false;
+                default:
+                    System.out.println("Opção inválida");
             }
         }
+    }
+
+    public static void imprimirMenu() {
+        System.out.println("Escolha uma opção: ");
+        System.out.println("1 - Exibir lista de filmes");
+        System.out.println("2 - Cadastrar novo filme");
+        System.out.println("3 - Sair");
     }
 
     public static void listarFilmes(List<Filme> filmes) {

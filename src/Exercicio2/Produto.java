@@ -1,14 +1,24 @@
 package Exercicio2;
 
 public class Produto {
+    private int codigo;
     private String nome;
     private double preco;
     private int quantidadeEmEstoque;
 
-    public Produto(String nome, double preco, int quantidadeEmEstoque) {
+    public Produto(int codigo, String nome, double preco, int quantidadeEmEstoque) {
+        this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -47,5 +57,9 @@ public class Produto {
 
     public void exibirDetalhes() {
         System.out.println("Nome: " + this.getNome() + "\nPreço: " + this.getPreco() + "\nQuantidade: " + this.getQuantidadeEmEstoque());
+    }
+
+    public void exibirResumo() {
+        System.out.println("Codigo do produto: " + this.getCodigo() + "\n" + this.getNome() + " | R$ " + this.getPreco());
     }
 }
